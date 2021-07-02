@@ -65,17 +65,57 @@ module.exports = {
     // },
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
+    ropsten: {
+      provider: () =>
+        new HDWalletProvider(
+          seedPhrase,
+          `wss://ropsten.infura.io/ws/v3/${infuraProjectId}`,
+        ),
+      network_id: 3,
+      gas: 5500000,
+      gasPrice: 10000000000,
+      networkCheckTimeout: 10000000,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+    },
+    kovan: {
+      provider: () =>
+        new HDWalletProvider(
+          seedPhrase,
+          `https://kovan.infura.io/v3/${infuraProjectId}`,
+        ),
+      network_id: 42,
+      gas: 6721975,
+      gasPrice: 10000000000,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+    },
     rinkeby: {
       provider: () =>
         new HDWalletProvider(
           seedPhrase,
-          'https://rinkeby.infura.io/v3/' + infuraProjectId,
+          `wss://rinkeby.infura.io/ws/v3/${infuraProjectId}`,
         ),
-      network_id: 4, // Rinkeby's id
-      gas: 5500000, // Rinkeby has a lower block limit than mainnet
-      confirmations: 2, // # of confs to wait between deployments. (default: 0)
-      timeoutBlocks: 300, // # of blocks before a deployment times out  (minimum/default: 50)
-      skipDryRun: true, // Skip dry run before migrations? (default: false for public nets )
+      network_id: 4,
+      gas: 6721975,
+      gasPrice: 10000000000,
+      networkCheckTimeout: 10000000,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+    },
+    // main ethereum network(mainnet)
+    main: {
+      provider: () =>
+        new HDWalletProvider(
+          seedPhrase,
+          `https://mainnet.infura.io/v3/${infuraProjectId}`,
+        ),
+      network_id: 1,
+      gas: 6721975,
+      gasPrice: 10000000000,
     },
     // Useful for private networks
     // private: {

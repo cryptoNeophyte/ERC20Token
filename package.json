@@ -3,5 +3,27 @@
     "@truffle/hdwallet-provider": "^1.4.1",
     "dotenv": "^10.0.0",
     "find-config": "^1.0.0"
-  }
+  },
+  "name": "erc20token",
+  "version": "1.0.0",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cryptoNeophyte/ERC20Token.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cryptoNeophyte/ERC20Token/issues"
+  },
+  "homepage": "https://github.com/cryptoNeophyte/ERC20Token#readme",
+  "description": ""
 }
